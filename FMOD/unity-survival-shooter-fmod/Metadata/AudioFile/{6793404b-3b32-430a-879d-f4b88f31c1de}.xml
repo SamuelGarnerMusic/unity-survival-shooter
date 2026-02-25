@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{6793404b-3b32-430a-879d-f4b88f31c1de}">
+		<property name="assetPath">
+			<value>322640__aruscio28__hitmarker-sound-effect.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.44408163265306122</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6c01181b-5c1a-4739-a9cd-f23081e0b951}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 namespace CompleteProject
 {
@@ -14,6 +15,11 @@ namespace CompleteProject
         public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
         public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
 
+        [SerializeField] 
+        private EventReference playerHurtSound;                     // Player Hurt Sound Variable
+        
+        [SerializeField] 
+        private EventReference playerDeathSound;                    // Player Death Sound Variable
 
         Animator anim;                                              // Reference to the Animator component.
         PlayerMovement playerMovement;                              // Reference to the player's movement.
@@ -65,6 +71,8 @@ namespace CompleteProject
             // Set the health bar's value to the current health.
             healthSlider.value = currentHealth;
 
+            RuntimeManager.PlayOneShot(playerHurtSound);  //Player Hurt Sound
+
             // If the player has lost all it's health and the death flag hasn't been set yet...
             if(currentHealth <= 0 && !isDead)
             {
@@ -84,6 +92,8 @@ namespace CompleteProject
 
             // Tell the animator that the player is dead.
             anim.SetTrigger ("Die");
+
+            RuntimeManager.PlayOneShot(playerDeathSound);  //Player Death Sound
 
             // Turn off the movement and shooting scripts.
             playerMovement.enabled = false;

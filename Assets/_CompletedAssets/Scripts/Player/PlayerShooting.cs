@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnitySampleAssets.CrossPlatformInput;
+using FMODUnity;
 
 namespace CompleteProject
 {
@@ -8,7 +9,9 @@ namespace CompleteProject
         public int damagePerShot = 20;                  // The damage inflicted by each bullet.
         public float timeBetweenBullets = 0.15f;        // The time between each shot.
         public float range = 100f;                      // The distance the gun can fire.
-
+        
+        [SerializeField] 
+        private EventReference gunshotSound;            // Gunshot Sound Variable
 
         float timer;                                    // A timer to determine when to fire.
         Ray shootRay = new Ray();                       // A ray from the gun end forwards.
@@ -45,6 +48,7 @@ namespace CompleteProject
             {
                 // ... shoot the gun.
                 Shoot ();
+
             }
 #else
             // If there is input on the shoot direction stick and it's time to fire...
@@ -115,6 +119,9 @@ namespace CompleteProject
                 // ... set the second position of the line renderer to the fullest extent of the gun's range.
                 gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
             }
+
+            RuntimeManager.PlayOneShot(gunshotSound);  //Gunshot Sound
+
         }
     }
 }

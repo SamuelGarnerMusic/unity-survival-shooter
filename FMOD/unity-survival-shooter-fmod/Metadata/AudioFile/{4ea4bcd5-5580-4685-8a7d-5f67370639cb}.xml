@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{4ea4bcd5-5580-4685-8a7d-5f67370639cb}">
+		<property name="assetPath">
+			<value>568000__leadstarson__monster_sound_big_death.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.9115419501133786</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6c01181b-5c1a-4739-a9cd-f23081e0b951}</destination>
+		</relationship>
+	</object>
+</objects>

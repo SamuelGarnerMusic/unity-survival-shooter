@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{28a1456f-fa7a-40eb-9f06-99419a822211}">
+		<property name="assetPath">
+			<value>713312__ron88888__pew-sound.flac</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.9051020408163265</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6c01181b-5c1a-4739-a9cd-f23081e0b951}</destination>
+		</relationship>
+	</object>
+</objects>

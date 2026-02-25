@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using FMODUnity;
 
 namespace CompleteProject
 {
@@ -9,6 +10,11 @@ namespace CompleteProject
         public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
         public int scoreValue = 10;                 // The amount added to the player's score when the enemy dies.
 
+        [SerializeField] 
+        private EventReference enemyHurtSound;      // Enemy Hurt Sound Variable
+
+        [SerializeField] 
+        private EventReference enemyDeathSound;      // Enemy Death Sound Variable
 
         Animator anim;                              // Reference to the animator.
         ParticleSystem hitParticles;                // Reference to the particle system that plays when the enemy is damaged.
@@ -56,6 +62,8 @@ namespace CompleteProject
             // And play the particles.
             hitParticles.Play();
 
+            RuntimeManager.PlayOneShot(enemyHurtSound);  //Enemy Hurt Sound
+
             // If the current health is less than or equal to zero...
             if(currentHealth <= 0)
             {
@@ -75,6 +83,8 @@ namespace CompleteProject
 
             // Tell the animator that the enemy is dead.
             anim.SetTrigger ("Dead");
+
+            RuntimeManager.PlayOneShot(enemyDeathSound);  //Enemy Death Sound
         }
 
 
