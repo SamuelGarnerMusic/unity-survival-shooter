@@ -49,6 +49,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{0acafdea-dc9f-4160-8b20-b74cd5f48a96}">
+		<relationship name="masters">
+			<destination>{0f14ee89-3f13-41c0-9062-2e9b0d88f4e0}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{531e39ff-2dcb-4edf-ae67-e5a58638e1d9}</destination>
 		</relationship>
@@ -101,7 +104,10 @@
 	<object class="MixerBusPanner" id="{4af0dd2a-1705-4385-934a-b0dfe42b17d5}" />
 	<object class="SingleSound" id="{c97e04f1-952c-4df5-af50-4f79a0deefc0}">
 		<property name="startOffset">
-			<value>23</value>
+			<value>26</value>
+		</property>
+		<property name="volume">
+			<value>-5</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{6793404b-3b32-430a-879d-f4b88f31c1de}</destination>

@@ -49,6 +49,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{90538768-e9dd-4812-8476-7ba1203ce493}">
+		<relationship name="masters">
+			<destination>{0f14ee89-3f13-41c0-9062-2e9b0d88f4e0}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{75e702b1-a2cd-4438-954e-beeabf2b7ae4}</destination>
 		</relationship>
@@ -102,6 +105,9 @@
 	<object class="SingleSound" id="{ec75113c-2a62-46ae-b6a0-cbf6007f2efe}">
 		<property name="startOffset">
 			<value>31</value>
+		</property>
+		<property name="pitch">
+			<value>4.5</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{8145e659-82d0-4695-b611-2b2c4404ba07}</destination>

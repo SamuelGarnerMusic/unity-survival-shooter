@@ -1925,6 +1925,7 @@ GameObject:
   - component: {fileID: 885988014}
   - component: {fileID: 885988013}
   - component: {fileID: 885988012}
+  - component: {fileID: 885988015}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -2055,6 +2056,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885988010}
   m_CullTransparentMesh: 0
+--- !u!114 &885988015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885988010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ac66d70ab374bbabd08846f5a2a306, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicVolumeSlider
+  musicSlider: {fileID: 885988012}
 --- !u!1 &901035526
 GameObject:
   m_ObjectHideFlags: 0
@@ -3204,6 +3218,10 @@ PrefabInstance:
       value: event:/Player/GunShot
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 3}
+      propertyPath: timeBetweenBullets
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 3}
       propertyPath: gunshotSound.Guid.Data1
       value: 143383126
       objectReference: {fileID: 0}
@@ -3295,6 +3313,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2023876521}
+    - targetCorrespondingSourceObject: {fileID: 100006, guid: 4e5a0d387dc27394b81600988ad0216f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2023876526}
   m_SourcePrefab: {fileID: 100100000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 3}
 --- !u!1 &1695883712
 GameObject:
@@ -3808,7 +3830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
   nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 678531482}
 --- !u!1 &1859424391
 GameObject:
   m_ObjectHideFlags: 0
@@ -4099,6 +4121,18 @@ MonoBehaviour:
         Data3: -826088023
         Data4: -1420801587
       Path: event:/Player/Player-Footstep
+--- !u!114 &2023876526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678531482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4253b8b4952ac4378a4b8e7ac1df8f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FMODAnimationTrigger
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

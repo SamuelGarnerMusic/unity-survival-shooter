@@ -13,7 +13,21 @@ public class PlayerFootstep : MonoBehaviour
 
     public AnimationEventTriggers[] animationEventTiggerPairs;
 
-    public void FMODAnimationEventTrigger(string eventString)
+    public void Footstep2(string eventString)
+    {
+        AnimationEventTriggers evt = animationEventTiggerPairs.FirstOrDefault(e => e.eventName == eventString);
+
+        // If the FMOD event is not null, play the FMOD event
+        if (evt.fmodEvent.IsNull == false) // FMOD event is valid, play it
+        {
+            var instance = RuntimeManager.CreateInstance(evt.fmodEvent);
+            instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            instance.start();
+            instance.release();
+        }
+    }
+
+    public void Footstep1(string eventString)
     {
         AnimationEventTriggers evt = animationEventTiggerPairs.FirstOrDefault(e => e.eventName == eventString);
 

@@ -84,7 +84,7 @@ namespace CompleteProject
             // Tell the animator that the enemy is dead.
             anim.SetTrigger ("Dead");
 
-            RuntimeManager.PlayOneShot(enemyDeathSound);  //Enemy Death Sound
+            RuntimeManager.PlayOneShot(enemyDeathSound, transform.position);  //Enemy Death Sound
         }
 
 
