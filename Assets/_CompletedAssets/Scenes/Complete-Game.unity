@@ -673,6 +673,7 @@ GameObject:
   - component: {fileID: 269909665}
   - component: {fileID: 269909664}
   - component: {fileID: 269909663}
+  - component: {fileID: 269909666}
   m_Layer: 5
   m_Name: EffectsSlider
   m_TagString: Untagged
@@ -803,6 +804,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269909661}
   m_CullTransparentMesh: 0
+--- !u!114 &269909666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269909661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3675ea1f5f33d453285cb279fc782b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FMODSFXSlider
+  slider: {fileID: 269909663}
+  minValue: -80
+  maxValue: -10
 --- !u!1 &284379003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,7 +2084,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ac66d70ab374bbabd08846f5a2a306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicVolumeSlider
-  musicSlider: {fileID: 885988012}
+  slider: {fileID: 885988012}
+  minValue: -80
+  maxValue: -10
 --- !u!1 &901035526
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,6 +3279,10 @@ PrefabInstance:
       propertyPath: damageImage
       value: 
       objectReference: {fileID: 1394906873}
+    - target: {fileID: 11400004, guid: 4e5a0d387dc27394b81600988ad0216f, type: 3}
+      propertyPath: fmodMaxValue
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 4e5a0d387dc27394b81600988ad0216f, type: 3}
       propertyPath: healthSlider
       value: 

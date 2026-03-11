@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using FMODUnity;
 
-public class MusicVolumeSlider : MonoBehaviour
+public class SFXVolumeSlider : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private Slider slider;
@@ -11,7 +11,7 @@ public class MusicVolumeSlider : MonoBehaviour
     [SerializeField] private float minValue = 0f;
     [SerializeField] private float maxValue = 1f;
 
-    private const string PARAMETER_NAME = "Level_Music";
+    private const string PARAMETER_NAME = "Level_SFXs";
 
     void Start()
     {
@@ -30,7 +30,7 @@ public class MusicVolumeSlider : MonoBehaviour
 
         if (result != FMOD.RESULT.OK)
         {
-            Debug.LogWarning($"[MusicVolumeSlider] Failed to set '{PARAMETER_NAME}': {result}");
+            Debug.LogWarning($"[SFXVolumeSlider] Failed to set '{PARAMETER_NAME}': {result}");
         }
     }
 

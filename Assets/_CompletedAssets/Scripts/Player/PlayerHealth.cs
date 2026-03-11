@@ -13,13 +13,18 @@ namespace CompleteProject
         public Slider healthSlider;                                 // Reference to the UI's health bar.
         public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
         public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
-        public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
+        public Color flashColour = new Color(1f, 0f, 0f, 0.1f);    // The colour the damageImage is set to, to flash.
 
         [SerializeField] 
         private EventReference playerHurtSound;                     // Player Hurt Sound Variable
         
         [SerializeField] 
         private EventReference playerDeathSound;                    // Player Death Sound Variable
+
+        [Header("FMOD Music Parameter")]
+        [SerializeField] private string healthParameterName = "Player_Health";
+        [SerializeField] private float fmodMinValue = 0f;
+        [SerializeField] private float fmodMaxValue = 1f;
 
         Animator anim;                                              // Reference to the Animator component.
         PlayerMovement playerMovement;                              // Reference to the player's movement.
@@ -37,6 +42,9 @@ namespace CompleteProject
 
             // Set the initial health of the player.
             currentHealth = startingHealth;
+
+            // Set FMOD parameter to full health at start.
+            UpdateHealthParameter();
         }
 
 
@@ -70,6 +78,9 @@ namespace CompleteProject
 
             // Set the health bar's value to the current health.
             healthSlider.value = currentHealth;
+
+            // Update the FMOD music parameter to reflect new health.
+            UpdateHealthParameter();
 
             RuntimeManager.PlayOneShot(playerHurtSound);  //Player Hurt Sound
 
@@ -105,6 +116,20 @@ namespace CompleteProject
         {
             // Reload the level that is currently loaded.
             SceneManager.LoadScene (0);
+        }
+
+
+        private void UpdateHealthParameter()
+        {
+            float normalized = (float)currentHealth / startingHealth;
+            float fmodValue = Mathf.Lerp(fmodMinValue, fmodMaxValue, normalized);
+
+            FMOD.RESULT result = RuntimeManager.StudioSystem.setParameterByName(healthParameterName, fmodValue);
+
+            if (result != FMOD.RESULT.OK)
+            {
+                Debug.LogWarning($"[PlayerHealth] Failed to set FMOD parameter '{healthParameterName}': {result}");
+            }
         }
     }
 }
