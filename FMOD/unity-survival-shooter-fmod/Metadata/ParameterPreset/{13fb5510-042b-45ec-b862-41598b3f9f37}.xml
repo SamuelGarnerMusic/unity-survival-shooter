@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{13fb5510-042b-45ec-b862-41598b3f9f37}">
+		<property name="name">
+			<value>SoundOnOff</value>
+		</property>
+		<relationship name="folder">
+			<destination>{0af907c2-31a6-4b47-9891-65b2375e06d5}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c7c570d3-1239-44aa-bf9d-71a8964c46c1}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c7c570d3-1239-44aa-bf9d-71a8964c46c1}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

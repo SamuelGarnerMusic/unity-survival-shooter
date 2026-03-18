@@ -22,9 +22,9 @@ namespace CompleteProject
         private EventReference playerDeathSound;                    // Player Death Sound Variable
 
         [Header("FMOD Music Parameter")]
-        [SerializeField] private string healthParameterName = "Player_Health";
+        [SerializeField] private string healthParameterName = "PlayerHealth";
         [SerializeField] private float fmodMinValue = 0f;
-        [SerializeField] private float fmodMaxValue = 1f;
+        [SerializeField] private float fmodMaxValue = 100f;
 
         Animator anim;                                              // Reference to the Animator component.
         PlayerMovement playerMovement;                              // Reference to the player's movement.
@@ -43,7 +43,11 @@ namespace CompleteProject
             // Set the initial health of the player.
             currentHealth = startingHealth;
 
-            // Set FMOD parameter to full health at start.
+        }
+
+        void Start()
+        {
+            // Banks are guaranteed loaded by Start, safe to set parameter now
             UpdateHealthParameter();
         }
 
@@ -121,15 +125,17 @@ namespace CompleteProject
 
         private void UpdateHealthParameter()
         {
-            float normalized = (float)currentHealth / startingHealth;
-            float fmodValue = Mathf.Lerp(fmodMinValue, fmodMaxValue, normalized);
-
-            FMOD.RESULT result = RuntimeManager.StudioSystem.setParameterByName(healthParameterName, fmodValue);
+             // No need to normalize — FMOD min/max already matches health values directly
+             FMOD.RESULT result = RuntimeManager.StudioSystem.setParameterByName(healthParameterName, currentHealth);
 
             if (result != FMOD.RESULT.OK)
+             {
+             Debug.LogWarning($"[PlayerHealth] Failed to set FMOD parameter '{healthParameterName}': {result}");
+             }
+             else
             {
-                Debug.LogWarning($"[PlayerHealth] Failed to set FMOD parameter '{healthParameterName}': {result}");
-            }
+            Debug.Log($"[PlayerHealth] Set '{healthParameterName}' to {currentHealth}");
+             }
         }
     }
 }
