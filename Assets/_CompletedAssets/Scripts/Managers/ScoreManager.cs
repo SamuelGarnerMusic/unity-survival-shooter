@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using FMODUnity;
 
 namespace CompleteProject
 {
@@ -19,6 +20,9 @@ namespace CompleteProject
 
             // Reset the score.
             score = 0;
+
+            // Initialise the FMOD "Score" global parameter to 0.
+            RuntimeManager.StudioSystem.setParameterByName("Score", 0);
         }
 
 
@@ -26,6 +30,9 @@ namespace CompleteProject
         {
             // Set the displayed text to be the word "Score" followed by the score value.
             text.text = "Score: " + score;
+
+            // Send the current score to the FMOD global parameter "Score".
+            RuntimeManager.StudioSystem.setParameterByName("Score", score);
         }
     }
 }
