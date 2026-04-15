@@ -3232,6 +3232,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 3}
+      propertyPath: damagePerShot
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4e5a0d387dc27394b81600988ad0216f, type: 3}
       propertyPath: gunshotSound.Path
       value: event:/Player/GunShot
       objectReference: {fileID: 0}

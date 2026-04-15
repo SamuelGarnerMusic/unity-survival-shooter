@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{767633c1-f8d5-460c-a168-5ea5d2f37225}">
+		<property name="assetPath">
+			<value>Untitled_bip.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.5939999999999994</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6c01181b-5c1a-4739-a9cd-f23081e0b951}</destination>
+		</relationship>
+	</object>
+</objects>
